@@ -5,23 +5,18 @@
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 나의 문제 풀이
-class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        table ={
-            ')': '(',
-            '}': '{',
-            ']': '['
-        }
-        
-        for char in s :
-            if char not in table: # 여는 괄호가 들어오면 스택에 추가
-                stack.append(char)
-            # 스택이 비어 있으면 여는 괄호가 없는 것이므로 false
-            # 닫는 괄호가 들어왔을 때 스택에 pop된 원소와 매칭되지 않으면 false
-            elif not stack or table[char] != stack.pop():
-                return False
-        return len(stack) == 0
+def game(nums):
+    arr = []
+    while nums:
+        min_val = min(nums)
+        nums.remove(min_val)
+        if nums:
+            second_min_val = min(nums)
+            nums.remove(second_min_val)
+            arr.append(second_min_val)
+        arr.append(min_val)
+    return arr
+
     
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
