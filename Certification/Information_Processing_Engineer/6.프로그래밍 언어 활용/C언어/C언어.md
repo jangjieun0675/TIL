@@ -24,3 +24,52 @@
 6. **논리 연산자**: `&&`, `||`
 7. **삼항 연산자**: `(조건식) ? a : b`
 8. **대입 연산자**: `=`, `+=`, `-=`, `*=`
+
+## 1. 표준 함수
+
+## (1) 문자열 함수
+
+### ① `strcat`
+문자열끼리 연결하는 함수 
+- 사용법: `strcat(dest, src) => destsrc`
+
+### ② `strcpy`
+문자열을 복사하는 함수
+- 사용법: `strcpy(dest, src) => dest`
+
+### ③ `strcmp`
+문자열을 비교하는 함수
+- 사용법: `strcmp(s1, s2) => s1 > s2 : 1을 반환, s1 = s2 : 0을 반환, s1 < s2 : -1을 반환`
+
+### ④ `strlen`
+문자열의 길이를 알려주는 함수
+- 사용법: `strlen(s) => s의 글자수`
+
+### ⑤ `strrev`
+문자열을 거꾸로 뒤집는 함수
+- 사용법: `strrev(hello) => olleh`
+
+### ⑥ `strchr`
+문자열 내에 일치하는 문자가 있는지 검사하는 함수
+- 사용법: `strchr(str, c) => str내에 c가 존재하는지 알려줌`
+
+## (2) 유틸리티 함수
+
+### ① `rand`
+임의의 값을 생성하는 함수
+
+### ② `srand(seed)`
+seed값에 해당하는 난수 패턴 생성
+- 예: `srand(time(NULL)) : 현재 시간으로 rand함수가 랜덤한 값을 가져오도록 함`
+
+### ③ `time(NULL)`
+현재 시간을 리턴
+
+### ④ `atoi`
+문자열을 정수형으로 변환 (ASCII to Integer)
+
+### ⑤ `atof`
+문자열을 실수형으로 변환 (ASCII to Floating Point)
+
+### ⑥ `itoa`
+정수형을 문자열로 변환 (Integer to ASCII)
