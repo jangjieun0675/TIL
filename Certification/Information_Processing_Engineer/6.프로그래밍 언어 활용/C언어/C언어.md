@@ -73,3 +73,74 @@ seed값에 해당하는 난수 패턴 생성
 
 ### ⑥ `itoa`
 정수형을 문자열로 변환 (Integer to ASCII)
+
+## 2. 포인터
+
+### (1) 포인터의 개념
+포인터 : 변수의 주소값을 저장하는 공간  
+개념 : `int a = 10; int *b = &a; => a == *b == *(&a)`
+
+### (2) 배열과 포인터
+
+```c
+int a[3] = {1, 2};
+int *p = a;
+printf("%d %d %d", a[0], a[1], a[2]); // 1, 2, 0
+printf("%d %d %d", *a, *(a+1), *(a+2)); // 1, 2, 0
+printf("%d %d %d", *p, *(p+1), *(p+2)); // 1, 2, 0
+printf("%d %d %d", p[0], p[1], p[2]); // 1, 2, 0
+```
+
+### (3) 2차원 배열과 포인터 배열
+
+```c
+int a[3][2] = {{1, 2}, {3, 4}, {5, 6}};
+int *p[3] = {a[2], a[0], a[1]};
+
+// 2차원 배열 a의 요소 접근
+printf("2차원 배열 a의 요소:\n");
+printf("%d %d\n", a[0][0], a[0][1]); // 1 2
+printf("%d %d\n", a[1][0], a[1][1]); // 3 4
+printf("%d %d\n", a[2][0], a[2][1]); // 5 6
+
+// 포인터 배열 p를 통해 배열 a의 요소 접근
+printf("\n포인터 배열 p를 통해 접근한 a의 요소:\n");
+printf("%d %d\n", p[0][0], p[0][1]); // 5 6 (a[2])
+printf("%d %d\n", p[1][0], p[1][1]); // 1 2 (a[0])
+printf("%d %d\n", p[2][0], p[2][1]); // 3 4 (a[1])
+
+// *a[0]을 통한 접근
+printf("\n*a[0]을 통한 접근:\n");
+printf("%d\n", *a[0]); // 1 (a[0][0])
+printf("%d\n", *(a[0] + 1)); // 2 (a[0][1])
+
+// *p[0]을 통한 접근
+printf("\n*p[0]을 통한 접근:\n");
+printf("%d\n", *p[0]); // 5 (a[2][0])
+printf("%d\n", *(p[0] + 1)); // 6 (a[2][1])
+```
+
+### (4) 구조체와 포인터
+### - 구조체는 일반 구조체 변수로 접근할 때는 .으로 접근하고, 구조체 포인터로 접근할 때는 ->로 접근한다.
+
+```c
+#include <stdio.h>
+
+struct Student {
+    char gender;
+    int age;
+};
+
+int main() {
+    struct Student s = {'F', 21};
+    struct Student *p = &s;
+
+    printf("%c %d\n", s.gender, s.age); // F 21
+    printf("%c %d\n", (&s)->gender, (&s)->age); // F 21
+    printf("%c %d\n", (*p).gender, (*p).age); // F 21
+    printf("%c %d\n", p->gender, p->age); // F 21
+    printf("%c %d\n", p[0].gender, p[0].age); // F 21
+
+    return 0;
+}
+```
