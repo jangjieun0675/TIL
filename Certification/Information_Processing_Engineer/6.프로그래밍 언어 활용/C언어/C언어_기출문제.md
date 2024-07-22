@@ -122,10 +122,96 @@ int main() {
 ```
 ### - 정답 : 2
 
+## 21 다음은 이진수를 십진수로 변환하는 C언어 코드이다. ⓐ, ⓑ에 적합한 코드를 작성하시오.
+```c
+#include <stdio.h>
+int main() {
+    int input = 101110;
+    int di = 1;
+    int sum = 0;
+    while (1) {
+        if (input == 0) break;
+        else {
+            sum = sum + (input % 10) * di;  // ⓐ ⓑ
+            di = di * 2;
+            input = input / 10;
+        }
+    }
+    printf("%d", sum);
+    return 0;
+}
 
+```
+### - 정답 : % 10 또는 & 2 또는 & 1
 
+## 23 다음은 C언어 코드이다. 출력 결과를 쓰시오.
+```c
+#include <stdio.h>
+int main() {
+    int n[3] = {73, 95, 82};
+    int i, sum = 0;
+    for(i=0; i<3; i++) {
+        sum += n[i];
+    }
+    switch(sum/30) {
+        case 10:
+        case 9: printf("A");
+        case 8: printf("B");
+        case 7: 
+        case 6: printf("C");
+        default: printf("D");
+    }
+    return 0;
+}
 
+```
+### - 정답 : BCD
 
+## 25 다음 C 프로그램에 홍길동, 김철수, 박영희 순서로 입력하였다. 프로그램의 출력 결과를 쓰시오.
+```c
+#include <stdio.h>
+char n[30];
+char *soojebi() {
+    gets(n);
+    return n;
+}
+int main() {
+    char *p1 = soojebi();
+    char *p2 = soojebi();
+    char *p3 = soojebi();
+    printf("%s\n", p1);
+    printf("%s\n", p2);
+    printf("%s\n", p3);
+    return 0;
+}
 
+```
+### - 정답 : 박영희 박영희 박영희
 
+## 27 다음은 선택정렬 코드이다. 밑줄에 알맞은 코드를 쓰시오.
+
+```c
+#include <stdio.h>
+int main() {
+    int arr[] = {64, 25, 12, 22, 11};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int i = 0, j, tmp;
+    do {
+        j = i + 1;
+        do {
+            if(arr[i] > arr[j]) {
+                tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+            j++;
+        } while (j < n);
+        i++;
+    } while (i < n-1);
+    for(i=0; i<5; i++)
+        printf("%d ", arr[i]);
+    return 0;
+}
+```
+### - 정답 : >
 
