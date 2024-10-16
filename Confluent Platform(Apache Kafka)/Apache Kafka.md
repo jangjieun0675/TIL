@@ -226,10 +226,10 @@ Kafka는 데이터를 **효율적이고 확장 가능**하게 저장 및 처리�
 - 여러 애플리케이션이 **Schema Registry**에 접근하여 동일한 **스키마와 버전**을 사용
 - 스키마는 **Serializer**에 의해 직렬화되어 Kafka Topic에 전송되기 전 **Schema Registry**와 동기화된다.
 
-![Schema Registry 이미지](./images/Schema Registry.PNG)
+![Schema Registry 이미지](./images/Schema_Registry.PNG)
 
 ## ② 운영 환경에서 안전하게 배포 – Schema Validation
 - Kafka의 **Broker**는 Schema Registry와 통합되어 클라이언트가 전송하는 데이터가 사전에 정의된 **스키마와 일치**하는지 **검증**
 - 이 기능을 통해 **잘못된 스키마**를 사용하는 경우 즉시 **오류가 발생**하며 **데이터 전송이 차단**된다.
 
-![Schema Validation 이미지](./images/Schema Validation.PNG)
+![Schema Validation 이미지](./images/Schema_Validation.PNG)
