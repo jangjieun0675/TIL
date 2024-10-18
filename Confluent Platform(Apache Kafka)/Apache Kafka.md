@@ -258,3 +258,21 @@ Confluent Control Center는 Apache Kafka의 관리 및 모니터링을 위해 �
 - 컨슈머 그룹 목록을 조회할 수 있습니다.
 - 각 컨슈머 그룹이 구독 중인 토픽 수와 컨슈머 수를 확인할 수 있습니다.
 
+
+---
+
+# 14. Kafka 포트 정리
+- Kafka Broker : 9092
+- Kafka Broker 간 통신(Inter-broker 통신) : 9093
+- Confluent Control Center : 9021
+- Kafka Connect REST API : 8083
+● Kafka와 외부 시스템을 연결하는 Kafka Connect의 REST API 포트
+- ksqlDB 서버 REST API : 8088
+- 메타데이터 서비스(MDS) : 8090
+- REST Proxy : 8082
+- 스키마 레지스트리 REST API : 8081
+- kraft Controller : 9090
+
+
+
+
